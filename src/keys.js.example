@@ -1,0 +1,9 @@
+export const apiKeys = {
+    mapbox: "",
+    geodanmaps: "",
+    freetilehosting: "",
+    bing: "",
+    nextzen: "",
+    google: "",
+    metoffice: ""
+  };
