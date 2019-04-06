@@ -1,0 +1,27 @@
+{
+  "name": "mapbox-wc",
+  "version": "0.1.0",
+  "description": "Mapbox WebComponent, a mapbox component that provides and extends mapbox-gl.js functionalities ",
+  "main": "index.js",
+  "scripts": {
+    "start": "polymer serve",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:integration": "mocha test/integration --timeout=10000",
+    "test:unit": "polymer test --module-resolution=node --npm"
+  },
+  "keywords": [
+    "mapbox-gl",
+    "legend",
+    "layermanager",
+    "gis",
+    "mapviewer",
+    "cartography"
+  ],
+  "author": "Anne Blankert",
+  "license": "ISC",
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.2.7",
+    "lit-element": "^2.0.1",
+    "mapbox-gl": "^0.53.1"
+  }
+}

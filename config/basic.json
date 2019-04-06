@@ -1,0 +1,38 @@
+{
+    "version": 1.0,
+    "map": {
+        "zoom": 1,
+        "center": [0, 0],
+        "pitch" : 0,
+        "bearing": 0
+    },
+    "datacatalog" : [
+        {
+            "type": "fill",
+            "id": "ne_110m_admin_0_countries",
+            "metadata": {
+                "checked": true,
+                "type": "reference",
+                "title": "Natural Earth Countries"
+            },
+            "source": {
+                "type": "geojson",
+                "data": "data/countries.geojson",
+                "attribution": "<a href=\"https://www.naturalearthdata.com/\" target=\"attribution\">Natural Earth</a>"
+            },
+            "paint": {
+                "fill-color": "green",
+                "fill-opacity": 0.4,
+                "fill-outline-color": "#444"
+            }
+        }
+    ],
+    "tools": {
+
+    },
+    "keys" : {
+        "mapboxaccesstoken": null
+    }
+}
+
+      
