@@ -1,8 +1,8 @@
 # mapbox-wc configuration
 
 ## Overview
-The mapbox-wc configuration is defined in [json](https://en.wikipedia.org/wiki/JSON) with 
-a basic structure as follows:
+The mapbox-wc configuration is defined in [json](https://en.wikipedia.org/wiki/JSON).  
+Basic structure is as follows:
 ```json
 {
     "version": 1.0,
@@ -21,10 +21,10 @@ a basic structure as follows:
 ```
 
 ## datacatalog
-The datacatalog contains the layers can be used in the map. Layers can be combined in into an
+The datacatalog contains the layers available to the map user. Layers can be combined into an
 hierarchical tree of groups.
 
-The basic structure of the datacatalog is:
+The basic structure of datacatalog is:
 ```json
 [
     {
