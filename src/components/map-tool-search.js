@@ -1,19 +1,14 @@
-import {LitElement, css, html} from 'lit-element';
+import {MapTool} from './map-tool.js';
+import {html} from 'lit-element';
 import {toolSearchIcon} from '../resources/map-icons.js';
 import './map-iconbutton.js';
 
-class MapToolSearch extends LitElement {
-    static get styles() {
-        return css`
-            :host {
-                display: block;
-                
-            }
-        `
-    }
+class MapToolSearch extends MapTool {
     render() {
         return html`
-            <map-iconbutton .icon='${toolSearchIcon}'></map-iconbutton>
+            <map-iconbutton ?active="${this.active}"
+                .icon='${toolSearchIcon}' 
+            ></map-iconbutton>
         `
     }
 }

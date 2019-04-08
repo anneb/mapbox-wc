@@ -3,7 +3,6 @@ import {apiKeys} from '../keys.js';
 import {mergeDeep} from '../utils/mergedeep.js';
 import {getCheckedLayers} from '../utils/treelist.js';
 import {timeout} from '../utils/misc.js';
-import {prepareLayer} from '../utils/layer.js'
 
 class MapboxWC extends LitElement {
   static get properties() {
@@ -26,9 +25,7 @@ class MapboxWC extends LitElement {
   }
   render() {
     return html`
-      <style>
-        @import "${document.baseURI}node_modules/mapbox-gl/dist/mapbox-gl.css";
-      </style>
+      <link href="${document.baseURI}node_modules/mapbox-gl/dist/mapbox-gl.css" rel="stylesheet">
       <div id="map"></map>
     `
   }
@@ -136,7 +133,7 @@ class MapboxWC extends LitElement {
   }
   _initMap() {
     if (!window.mapboxgl) {
-      console.error('window.mapboxgl not available\nload mapbox-gl script and css globally');
+      console.error('window.mapboxgl not available\nload script node_modules/mapbox-gl/dist/mapbox-gl.js globally');
       return;
     }
     if (this.accesstoken) {

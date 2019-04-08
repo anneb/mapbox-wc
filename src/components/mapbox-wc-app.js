@@ -6,18 +6,14 @@ import "./map-tool-search.js";
 import "./map-tool-layers.js";
 import "./map-tool-measure.js";
 import "./map-tool-info.js";
-import "./simple-div.js";
+
 
 class MapboxWCApp extends LitElement {
-    static get styles() {
-        return css`
-        `
-    }
     render() {
         return html`
             <mapbox-wc configUrl="./config/basic.json"></mapbox-wc>
             <map-tool-container position="top-left">
-                <map-tool-bar>
+                <map-tool-bar @click="${e=>this._toolClicked(e)}">
                     <map-tool-search></map-tool-search>
                     <map-tool-layers></map-tool-layers>
                     <map-tool-measure></map-tool-measure>
@@ -25,6 +21,16 @@ class MapboxWCApp extends LitElement {
                 </map-tool-bar>
             </map-tool-container>
         `
+    }
+    _toolClicked(e) {
+        const tools = this.shadowRoot.querySelector('map-tool-bar').children;
+        for (let tool of tools) {
+            if (tool.tagName === e.target.tagName) {
+                tool.setAttribute('active', "true");
+            } else {
+                tool.removeAttribute('active');
+            }
+        }
     }
 }
 
