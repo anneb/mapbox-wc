@@ -3,6 +3,10 @@ import {html} from 'lit-element';
 import {toolSearchIcon} from '../resources/map-icons.js';
 import './map-iconbutton.js';
 
+/**
+* @polymer
+* @extends HTMLElement
+*/
 class MapToolSearch extends MapTool {
     render() {
         return html`

@@ -3,6 +3,10 @@ import {html} from 'lit-element';
 import {toolInfoIcon} from '../resources/map-icons.js';
 import './map-iconbutton.js';
 
+/**
+* @polymer
+* @extends HTMLElement
+*/
 class MapToolInfo extends MapTool {
    render() {
         return html`

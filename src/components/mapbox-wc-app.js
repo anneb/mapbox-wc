@@ -7,7 +7,10 @@ import "./map-tool-layers.js";
 import "./map-tool-measure.js";
 import "./map-tool-info.js";
 
-
+/**
+* @polymer
+* @extends HTMLElement
+*/
 class MapboxWCApp extends LitElement {
     render() {
         return html`
@@ -19,6 +22,7 @@ class MapboxWCApp extends LitElement {
                     <map-tool-measure></map-tool-measure>
                     <map-tool-info></map-tool-info>
                 </map-tool-bar>
+                <map-panel></map-panel>
             </map-tool-container>
         `
     }

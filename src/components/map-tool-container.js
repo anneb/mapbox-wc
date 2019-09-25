@@ -1,5 +1,9 @@
 import {LitElement, css, html} from 'lit-element';
 
+/**
+* @polymer
+* @extends HTMLElement
+*/
 class MapToolContainer extends LitElement {
     static get styles() {
         return css`

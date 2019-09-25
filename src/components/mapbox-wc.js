@@ -4,6 +4,10 @@ import {mergeDeep} from '../utils/mergedeep.js';
 import {getCheckedLayers} from '../utils/treelist.js';
 import {timeout} from '../utils/misc.js';
 
+/**
+* @polymer
+* @extends HTMLElement
+*/
 class MapboxWC extends LitElement {
   static get properties() {
     return {

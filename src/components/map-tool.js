@@ -1,6 +1,10 @@
 import {LitElement, css, html} from 'lit-element';
 import './map-iconbutton.js';
 
+/**
+* @polymer
+* @extends HTMLElement
+*/
 export class MapTool extends LitElement {
     static get properties() {
         return {
