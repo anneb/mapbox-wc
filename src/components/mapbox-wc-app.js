@@ -44,7 +44,7 @@ class MapboxWCApp extends LitElement {
                 let mapPanel = this.shadowRoot.querySelector('map-panel');
                 let currentTool = toolActive ? tool.tagName : "";
                 for (let panel of mapPanel.children) {
-                    panel.setAttribute('currentTool', currentTool);
+                    panel.setAttribute('currenttool', currentTool);
                 }
                 if (toolActive) {
                     mapPanel.setAttribute('active', '');

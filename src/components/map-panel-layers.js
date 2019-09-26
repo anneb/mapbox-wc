@@ -7,7 +7,7 @@ import {LitElement, css, html} from 'lit-element';
 export class MapPanelLayers extends LitElement {
     static get properties() {
         return {
-            currentTool: {type: String}
+            currentTool: {type: String, attribute: "currenttool"}
         }
     }
     static get styles() {
@@ -15,11 +15,6 @@ export class MapPanelLayers extends LitElement {
             :host {
                 display: block;
             }
-            div {
-                width: 100%;
-                height: auto;
-            }
-            
         `
     }
     constructor () {
@@ -31,7 +26,7 @@ export class MapPanelLayers extends LitElement {
             return html``;
         }
         return html`
-            <div>Layers<ul><li>Layer1</li><li>Layer2</li></ul></div>
+            <div class="layerlist">Layers<ul><li>Layer1</li><li>Layer2</li><li>layer3</li><li>layer4</li></ul></div>
         `
     }
 }

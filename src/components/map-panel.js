@@ -16,25 +16,26 @@ export class MapPanel extends LitElement {
             :host {
                 display: block;
             }
-            div {
+            .container {
+                display: flex;
+                align-items: stretch;
+                background-color: rgba(192,192,192,0.5);
                 width: 300px;
-                transition: width 0.5s ease;
+                transition: width 0.5s ease, padding 0s ease;
                 min-height: 55px;
                 pointer-events: auto;
+                padding: 5px;
+                box-sizing: border-box;
                 overflow: hidden;
             }
             .hidden {
                 width: 0px;
+                padding: 0;
+                transition: width 0.5s ease, padding 0.5s ease-out;
             }
-            .bordered {
-                background-color: rgba(192,192,192,0.5);
-                width: 100%;
-                height: 100%;
-                padding: 5px;
-                overflow: auto;
-            }
-            ::slotted(*) {
+            .panelcontent {
                 background-color: white;
+                width: 100%;
             }
         `
     }
@@ -44,7 +45,7 @@ export class MapPanel extends LitElement {
     }
     render() {
         return html`
-            <div class="container${this.active?'':' hidden'}"><div class="bordered"><slot></slot></div></div>
+            <div class="container${this.active?'':' hidden'}"><div class="panelcontent"><slot></slot></div></div>
         `
     }
 }

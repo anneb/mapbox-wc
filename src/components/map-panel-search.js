@@ -7,7 +7,7 @@ import {LitElement, css, html} from 'lit-element';
 export class MapPanelSearch extends LitElement {
     static get properties() {
         return {
-            currentTool: {type: String}
+            currentTool: {type: String, attribute: "currenttool"}
         }
     }
     static get styles() {
@@ -15,7 +15,7 @@ export class MapPanelSearch extends LitElement {
             :host {
                 display: block;
             }
-            div {
+            .search {
                 width: 100%;
                 height: 200px;
                 background-color: red;
@@ -32,7 +32,7 @@ export class MapPanelSearch extends LitElement {
             return html``;
         }
         return html`
-            <div>Search!</div>
+            <div class="search">Search!</div>
         `
     }
 }
