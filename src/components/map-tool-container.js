@@ -9,11 +9,11 @@ class MapToolContainer extends LitElement {
         return css`
             :host {
                 position: absolute;
-                max-width: 375px;
+                display: flex;
                 left: 10px;
                 top: 10px;
                 pointer-events: none;
-                background-color: white;
+                background-color: transparent;
             }
         `
     }
