@@ -22,7 +22,7 @@ export class MapPanelLayers extends LitElement {
         this.currentTool = "";
     }
     render() {
-        if (this.currentTool !== 'MAP-TOOL-LAYERS') {
+        if (this.currentTool !== 'layers') {
             return html``;
         }
         return html`

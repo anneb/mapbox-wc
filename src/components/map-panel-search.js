@@ -28,7 +28,7 @@ export class MapPanelSearch extends LitElement {
         this.currentTool = "";
     }
     render() {
-        if (this.currentTool !== 'MAP-TOOL-SEARCH') {
+        if (this.currentTool !== 'search') {
             return html``;
         }
         return html`

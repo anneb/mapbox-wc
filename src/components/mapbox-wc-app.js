@@ -1,16 +1,15 @@
-import {LitElement, css, html} from 'lit-element';
+import {LitElement, css, html, svg} from 'lit-element';
 import "./mapbox-wc.js";
 import "./map-tool-container.js";
 import "./map-tool-bar.js";
-import "./map-tool-search.js";
-import "./map-tool-layers.js";
-import "./map-tool-measure.js";
-import "./map-tool-info.js";
 import "./map-panel.js";
 import "./map-panel-info.js";
 import "./map-panel-search.js";
 import "./map-panel-layers.js";
 import "./map-panel-measure.js";
+import "./map-tool-button.js";
+
+import {toolSearchIcon, toolLayersIcon, toolMeasureIcon, toolInfoIcon} from '../resources/map-icons.js';
 
 /**
 * @polymer
@@ -22,10 +21,14 @@ class MapboxWCApp extends LitElement {
             <mapbox-wc configUrl="./config/basic.json"></mapbox-wc>
             <map-tool-container position="top-left">
                 <map-tool-bar @click="${e=>this._toggleTool(e)}">
-                    <map-tool-search></map-tool-search>
-                    <map-tool-layers></map-tool-layers>
-                    <map-tool-measure></map-tool-measure>
-                    <map-tool-info></map-tool-info>
+                    <map-tool-button label="Hallo"></map-tool-button>
+                    <map-tool-button .icon="${toolSearchIcon}"}></map-tool-button>
+                    <map-tool-button disabled label="disabled"></map-tool-button>
+                    <map-tool-button title="search" .icon="${toolSearchIcon}"></map-tool-button>
+                    <map-tool-button value="search" .icon="${toolSearchIcon}"></map-tool-button>
+                    <map-tool-button value="layers" .icon="${toolLayersIcon}"></map-tool-button>
+                    <map-tool-button value="measure" .icon="${toolMeasureIcon}"></map-tool-button>
+                    <map-tool-button value="info" .icon="${toolInfoIcon}"></map-tool-button>
                 </map-tool-bar>
                 <map-panel>
                     <map-panel-search></map-panel-search>
@@ -39,10 +42,10 @@ class MapboxWCApp extends LitElement {
     _toggleTool(e) {
         const tools = this.shadowRoot.querySelector('map-tool-bar');
         for (let tool of tools.children) {
-            if (tool.tagName === e.target.tagName) {
+            if (tool === e.target) {
                 let toolActive = tool.toggleAttribute('active');
                 let mapPanel = this.shadowRoot.querySelector('map-panel');
-                let currentTool = toolActive ? tool.tagName : "";
+                let currentTool = toolActive ? tool.value : "";
                 for (let panel of mapPanel.children) {
                     panel.setAttribute('currenttool', currentTool);
                 }

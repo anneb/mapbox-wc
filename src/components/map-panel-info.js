@@ -22,7 +22,7 @@ export class MapPanelInfo extends LitElement {
         this.currentTool = "";
     }
     render() {
-        if (this.currentTool !== 'MAP-TOOL-INFO') {
+        if (this.currentTool !== 'info') {
             return html``;
         }
         return html`

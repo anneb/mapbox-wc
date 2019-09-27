@@ -22,7 +22,7 @@ export class MapPanelMeasure extends LitElement {
         this.currentTool = "";
     }
     render() {
-        if (this.currentTool !== 'MAP-TOOL-MEASURE') {
+        if (this.currentTool !== 'measure') {
             return html``;
         }
         return html`
